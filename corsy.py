@@ -86,7 +86,10 @@ if urls:
     if results:
         if json_file:
             with open(json_file, "w+") as file:
-                json.dump(results, file, indent=2)
+                for r in results:
+                    json.dump(r, file)
+                    file.write("\n")
+
     else:
         print(" %s No misconfigurations found." % bad)
 else:
