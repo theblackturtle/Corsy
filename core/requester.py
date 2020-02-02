@@ -11,7 +11,7 @@ def requester(url, scheme, headers, origin):
         headers["Origin"] = scheme + "://" + origin
 
     try:
-        response = requests.get(url, headers=headers, verify=False, timeout=15, proxies={"https": "127.0.0.1:8080"})
+        response = requests.get(url, headers=headers, verify=False, timeout=15)
     except Exception:
         return
     response = response.headers
