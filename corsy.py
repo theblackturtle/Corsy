@@ -63,8 +63,6 @@ def cors(target, header_dict, delay):
 
 
 if urls:
-    if len(urls) > 1:
-        print(" %s Estimated scan time: %i secs" % (run, round(len(urls) * 1.75)))
     results = []
     threadpool = concurrent.futures.ThreadPoolExecutor(max_workers=threads)
     futures = (threadpool.submit(cors, url, header_dict, delay) for url in urls)
@@ -90,7 +88,5 @@ if urls:
                     json.dump(r, file)
                     file.write("\n")
 
-    else:
-        print(" %s No misconfigurations found." % bad)
 else:
     print(" %s No valid URLs to test." % bad)
