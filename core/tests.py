@@ -121,7 +121,8 @@ def active_tests(url, root, scheme, header_dict, delay):
             results.append({url: info})
         else:
             pt = passive_tests(url, headers)
-            if len(pt) > 0:
-                for r in pt:
-                    results.append(r)
+            if pt is not None:
+                if len(pt) > 0:
+                    for r in pt:
+                        results.append(r)
     return results
