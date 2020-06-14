@@ -10,7 +10,6 @@
 		"description" : "This host has whitelisted a third party host for cross origin requests.",
 		"severity" : "Medium",
 		"exploitation" : "If the whitelisted host is a code hosting platform such as codepen.io or has an XSS vulnerability, it can be used to exploit this misconfiguration."
-
 	},
 	"origin reflected": {
 		"class" : "origin reflected",

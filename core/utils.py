@@ -2,7 +2,7 @@ import os
 import tld
 import json
 import tempfile
-
+import re
 
 def host(string):
     if string and "*" not in string:
@@ -56,7 +56,7 @@ def prompt(default=None):
 def extractHeaders(headers):
     headers = headers.replace("\\n", "\n")
     sorted_headers = {}
-    matches = re.findall(r"^?(.*?):\s(.*?)[\n$]", headers)
+    matches = re.findall(r"^(.*?):\s(.*?)[\n$]", headers)
     for match in matches:
         header = match[0]
         value = match[1]

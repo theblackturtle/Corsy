@@ -11,7 +11,7 @@ def requester(url, scheme, headers, origin):
         headers["Origin"] = scheme + "://" + origin
 
     try:
-        response = requests.get(url, headers=headers, verify=False, timeout=15)
+        response = requests.get(url, headers=headers, verify=False, timeout=20)
     except Exception:
         return
     response = response.headers
